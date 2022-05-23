@@ -1,0 +1,51 @@
+﻿@model ThreeTierArch.Models.EmployeeViewModel
+@{
+    ViewData["Title"] = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section id="appointment" class="appointment section-bg">
+    <div class="container">
+        <div class="section-title">
+          <h2>Employee</h2>
+          <p>Create a Employee with a suitable names</p>
+        </div>
+        <form>
+            <div class="row">
+                <div class="col-md-4 form-group">
+                    @Html.DisplayNameFor(e => e.Employees.Name)
+                    @Html.TextBoxFor(e => e.Employees.Name, new { @id = "txt_name", @class = "form-control", @placeholder = "Enter Name" })
+                    @Html.ValidationMessageFor(e => e.Employees.Name)
+                </div>
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                    @Html.DisplayNameFor(e => e.Employees.Age)
+                    @Html.TextBoxFor(e => e.Employees.Age, new { @id = "txt_age", @class = "form-control", @placeholder = "Enter Age" })
+                    @Html.ValidationMessageFor(e => e.Employees.Age)
+                </div>
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                    <select name="department" id="ddl_role" class="form-select">
+                        <option value="">--Select Role--</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 form-group mt-3">
+                    @Html.DisplayNameFor(e => e.Employees.Mobile)
+                    @Html.TextAreaFor(e => e.Employees.Mobile, new { @id = "txt_mobile", @class = "form-control", @placeholder = "Enter Mobile" })
+                    @Html.ValidationMessageFor(e => e.Employees.Mobile)
+                </div>
+                <div class="col-md-4 form-group mt-3">
+                    @Html.DisplayNameFor(e => e.Employees.Email)
+                    @Html.TextAreaFor(e => e.Employees.Email, new { @id = "txt_email", @class = "form-control", @placeholder = "Enter Email" })
+                    @Html.ValidationMessageFor(e => e.Employees.Email)
+                </div>
+                <div class="col-md-4 form-group mt-3">
+                    @Html.DisplayNameFor(e => e.Employees.Address)
+                    @Html.TextAreaFor(e => e.Employees.Address, new { @id = "txt_address", @class = "form-control", @placeholder = "Enter Address" })
+                    @Html.ValidationMessageFor(e => e.Employees.Address)
+                </div>
+            </div>
+            <div class="text-center"><button type="button" id="btn_appointment">Add</button></div>
+        </form>
+
+    </div>
+</section>
